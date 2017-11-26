@@ -1,0 +1,7 @@
+{
+    "require": {
+        "filp/whoops": "^2.1",
+        "spatie/array-to-xml": "^2.7",
+        "bephp/activerecord": "^2.1"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "bephp/activerecord",
+    "type": "library",
+    "description": "micro activerecord library in PHP(only 400 lines with comments), support chain calls and relations(HAS_ONE, HAS_MANY, BELONGS_TO).",
+    "keywords": ["activerecord", "orm", "pdo", "relation", "micro", "database"],
+    "homepage": "http://lloydzhou.github.io/activerecord/",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "^2.8",
+        "satooshi/php-coveralls":"*",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "files": [ "ActiveRecord.php" ]
+     }
+}
