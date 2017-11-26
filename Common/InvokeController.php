@@ -26,7 +26,16 @@ class InvokeController {
 		$vars = array_merge(self::parsePathInfo(), $_POST);
 		$vars = array_merge($vars, $_GET);
 		foreach ($params as $param) {
-			$args[] = $vars[$param->getName()];
+			if (!in_array($param->getName(), array_keys($vars))) {
+				if ($param->isDefaultValueAvailable()) {
+					$args[] = $param->getDefaultValue();
+				} else {
+					$args[] = null;
+				}
+			} else {
+				$args[] = $vars[$param->getName()];
+			}
+
 		}
 		DbDriver::getInstance(Utils::get_cfg('DB_TYPE'));
 		if (count(@$args) > 0) {
