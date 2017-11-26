@@ -36,9 +36,11 @@ class InvokeController {
 		}
 		switch (Utils::get_cfg('OUTPUT')) {
 		case 'json':
+			header('Content-Type: application/json');
 			echo json_encode($result);
 			break;
 		case 'xml':
+			header('Content-Type: application/xml');
 			echo Spatie\ArrayToXml\ArrayToXml::convert($result);
 			break;
 		}
