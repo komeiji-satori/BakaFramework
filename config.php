@@ -10,6 +10,9 @@ define('Config', json_encode([
 		'user' => 'root',
 		'pass' => 'satori',
 	],
+	// 'SQLite' => [
+	// 	'name' => '/path/to/sqlite.db',
+	// ],
 	'Redis' => [
 		'host' => '127.0.0.1',
 		'port' => 6379,

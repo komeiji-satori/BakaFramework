@@ -10,6 +10,12 @@ class DbDriver {
 			self::$connection = new PDO(self::$dsn, $config['user'], $config['pass']);
 			return ActiveRecord::setDb(self::$connection);
 			break;
+		case 'SQLite':
+			$config = Utils::get_cfg('SQLite');
+			self::$dsn = sprintf('sqlite:%s', $config['name']);
+			self::$connection = new PDO(self::$dsn);
+			return ActiveRecord::setDb(self::$connection);
+			break;
 		}
 	}
 }
