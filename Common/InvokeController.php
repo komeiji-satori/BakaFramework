@@ -11,6 +11,11 @@ class InvokeController {
 	public static function _init() {
 		self::$_pathinfo = $_SERVER['PATH_INFO'] ?? '';
 		self::_setActionAndMethod();
+		if (!file_exists($path = "Controller/" . self::$_action . ".php")) {
+			die(json_encode(self::$_error['action_not_found']));
+		} else {
+			require $path;
+		}
 		if (!class_exists(self::$_action)) {
 			die(json_encode(self::$_error['action_not_found']));
 		}
