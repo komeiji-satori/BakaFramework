@@ -85,8 +85,12 @@ class InvokeController {
 		return $url_arrays;
 	}
 	private static function _setActionAndMethod() {
-		$params = explode('/', self::$_pathinfo);
-		self::$_action = $params[1];
-		self::$_method = $params[2];
+		if (self::$_pathinfo) {
+			$params = explode('/', self::$_pathinfo);
+			if (isset($params[1]) && isset($params[2])) {
+				self::$_action = $params[1];
+				self::$_method = $params[2];
+			}
+		}
 	}
 }
