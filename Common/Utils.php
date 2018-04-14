@@ -1,7 +1,7 @@
 <?php
 class Utils extends BakaController
 {
-    public static function RedisConnect()
+    public function RedisConnect()
     {
         if (!class_exists('Redis')) {
             return false;
