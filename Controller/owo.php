@@ -15,9 +15,4 @@ class owo extends BakaController
             "str" => $this->test->get(),
         ];
     }
-    public static function lib()
-    {
-        Loader::Library("test");
-        return TestClass::get();
-    }
 }
