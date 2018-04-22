@@ -28,6 +28,10 @@ class BakaController
                 require_once __DIR__ . "/Cache/" . $driver . ".php";
                 return (new redis_driver)->getInstance();
                 break;
+            case 'memcache':
+                require_once __DIR__ . "/Cache/" . $driver . ".php";
+                return (new memcache_driver)->getInstance();
+                break;
         }
     }
     public function get_instance()
